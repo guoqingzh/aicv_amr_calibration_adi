@@ -1,0 +1,13 @@
+{
+    "names": {
+        "msCalibLib": {
+            "dependencies": []
+        }
+    }
+
+    "names": {
+        "msCalibToolkit": {
+            "dependencies": ["msCalibLib"]
+        }
+    }
+}

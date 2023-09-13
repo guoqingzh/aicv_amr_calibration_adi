@@ -1,0 +1,26 @@
+repositories:
+  multisensor-calibration-library:
+    type: git
+    url: https://github.com/intel-sandbox/multisensor-calibration-library.git
+    version: main
+  multisensor-calibration-toolkit:
+    type: git
+    url: https://github.com/intel-sandbox/multisensor-calibration-toolkit.git
+    version: main
+  data-collection:
+    type: git
+    url: https://github.com/intel-innersource/applications.robotics.mobile.data-collection.git
+    version: quarz
+  quarz:
+    type: git
+    url: https://github.com/intel-sandbox/multisensor-calibration-library.git
+    version: imu_calibration
+  robot-vision:
+    type: git
+    url: https://github.com/intel-innersource/applications.robotics.mobile.robot-vision.git
+    version: marker_api_documentation
+  torchauto:
+    type: git
+    url: https://github.com/intel-innersource/applications.ai.torchauto.git
+    version: cpu
+

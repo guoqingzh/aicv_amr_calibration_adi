@@ -1,0 +1,20 @@
+version: "1.0"
+services:
+  aicv-amr-calib:
+    image: aicv_amr:multisensor-record-calib
+    build:
+      context: ../../..
+      dockerfile: aicv_amr_calib/docker/Dockerfile_calib
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY
+      - ROS_DOMAIN_ID
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # - ${HOME}/.Xauthority:${humble_docker_home}/.Xauthority:rw
+      # - ${HOME}/.ros:${humble_docker_home}/.ros
+      - /dev:/dev
+
