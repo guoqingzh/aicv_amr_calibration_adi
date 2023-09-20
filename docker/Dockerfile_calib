@@ -50,24 +50,24 @@ RUN python3 -m pip install rosbags>=0.9.12
 
 #copy all the source files to the image
 COPY ${WS_RELATIVE_ROOT} /root/ws/
-WORKDIR /root/ws/aicv_amr_calib
+WORKDIR /root/ws/aicv_amr_calibration
 RUN rm -rf build/ install/ log/
 
 
 # Bulding multisensor-calibration-library
-WORKDIR /root/ws/aicv_amr_calib/src/multisensor-calibration-library
+WORKDIR /root/ws/aicv_amr_calibration/src/multisensor-calibration-library
 RUN python3 setup.py bdist_wheel
 RUN python3 -m pip install dist/quarz-1.0.0-cp38-cp38-linux_x86_64.whl
 
 
 # Bulding multisensor-calibration-toolkit
-WORKDIR /root/ws/aicv_amr_calib/src/multisensor-calibration-toolkit
+WORKDIR /root/ws/aicv_amr_calibration/src/multisensor-calibration-toolkit
 RUN mkdir -p /home/tools
 
 RUN cp requirements.txt /home/tools/
 RUN python3 -m pip install --ignore-installed -r /home/tools/requirements.txt
 
-WORKDIR /root/ws/aicv_amr_calib/src
+WORKDIR /root/ws/aicv_amr_calibration/src
 RUN cp -r torchauto /home/tools/
 RUN python3 -m pip install /home/tools/torchauto
 ENV PATH=$PATH:/home/tools/torchauto/scripts/inspect_dataset
@@ -81,7 +81,7 @@ RUN python3 -m pip install /home/tools/robot-vision
 RUN cp -r quarz /home/tools/quarz
 RUN python3 -m pip install /home/tools/quarz
 
-WORKDIR /root/ws/aicv_amr_calib/src/multisensor-calibration-toolkit
+WORKDIR /root/ws/aicv_amr_calibration/src/multisensor-calibration-toolkit
 RUN cp -r calibration-tools /home/tools
 RUN python3 -m pip install /home/tools/calibration-tools
 
@@ -89,7 +89,7 @@ RUN cp -r scripts /home/tools
 
 RUN cp -r config /home/tools/scripts
 
-RUN mv /root/ws/aicv_amr_calib/scripts/* /home/tools/scripts
+RUN mv /root/ws/aicv_amr_calibration/scripts/* /home/tools/scripts
 
 RUN mkdir -p /workspace/bags
 RUN mkdir -p /workspace/data
