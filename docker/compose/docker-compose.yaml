@@ -4,7 +4,7 @@ services:
     image: aicv_amr:multisensor-record-calib
     build:
       context: ../../..
-      dockerfile: aicv_amr_calib/docker/Dockerfile_calib
+      dockerfile: aicv_amr_calibration/docker/Dockerfile_calib
     stdin_open: true
     tty: true
     environment:
