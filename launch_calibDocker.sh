@@ -5,7 +5,7 @@ docker_container="compose-aicv-amr-calib-1"
 
 echo "Importing calibration repositories"
 mkdir src
-vcs import src < calib.repos
+vcs import src < calib.repos --recursive
 
 if [ $? -eq 0 ]; then
     echo "Repositories successfully imported"
