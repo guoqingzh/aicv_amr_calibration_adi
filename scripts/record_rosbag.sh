@@ -16,12 +16,12 @@ usage() {
     echo "Usage: $0 [OPTIONS]"
     echo "Options:"
     echo " -h, --help           :   Display this help message"
-    echo " -f, --filename       :   Name of the output rosbag file (without extension) to be saved in /workspace/bags"
+    echo " -f, --output_file    :   Name of the output rosbag file (without extension) to be saved in /workspace/bags"
     echo " -s, --sensors        :   Recording to be used for calibrating which sensors (default <1>)"
     echo "          1           :   cam2cam  - record ROS topics <IR, RGB>"
     echo "          2           :   cam2imu  - record ROS topics <IR, RGB, IMU>"
     echo "          3           :   cam2odom - record ROS topics <IR, RGB, odom>"
-    echo " Sample command       :   $0 --filename outputBag --sensors 1"
+    echo " Sample command       :   $0 --output_file outputBag --sensors 1"
 }
 
 
@@ -114,7 +114,7 @@ if [ -d "/opt/ros" ]; then
     if [ -n "$ros_version" ]; then
         echo "Found ROS version: $ros_version"
         # Source the setup.bash file for the detected ROS version
-        #source "/opt/ros/$ros_version/setup.bash"
+        source "/opt/ros/$ros_version/setup.bash"
     else
         echo "No ROS version found in /opt/ros."
     fi
