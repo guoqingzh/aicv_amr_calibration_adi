@@ -175,13 +175,13 @@ do
     case $sensors in
 
         1)
-            rostopic_opts+="/$curCamera/color/camera_info /$curCamera/color/image_raw /$curCamera/infra1/camera_info /$curCamera/infra1/image_rect_raw /$curCamera/infra2/camera_info /$curCamera/infra2/image_rect_raw"
+            rostopic_opts+="/$curCamera/color/camera_info /$curCamera/color/image_raw /$curCamera/infra1/camera_info /$curCamera/infra1/image_rect_raw /$curCamera/infra2/camera_info /$curCamera/infra2/image_rect_raw "
             ;;
         2)
-            rostopic_opts+="/$curCamera/color/camera_info /$curCamera/color/image_raw /$curCamera/infra1/camera_info /$curCamera/infra1/image_rect_raw /$curCamera/infra2/camera_info /$curCamera/infra2/image_rect_raw /$curCamera/imu"
+            rostopic_opts+="/$curCamera/color/camera_info /$curCamera/color/image_raw /$curCamera/infra1/camera_info /$curCamera/infra1/image_rect_raw /$curCamera/infra2/camera_info /$curCamera/infra2/image_rect_raw /$curCamera/imu "
             ;;
         3)
-            rostopic_opts+="/$curCamera/color/camera_info /$curCamera/color/image_raw /$curCamera/infra1/camera_info /$curCamera/infra1/image_rect_raw /$curCamera/infra2/camera_info /$curCamera/infra2/image_rect_raw /odom"
+            rostopic_opts+="/$curCamera/color/camera_info /$curCamera/color/image_raw /$curCamera/infra1/camera_info /$curCamera/infra1/image_rect_raw /$curCamera/infra2/camera_info /$curCamera/infra2/image_rect_raw /odom "
             ;;
     esac
 done
