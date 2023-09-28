@@ -134,11 +134,11 @@ echo -e "Input rosbag: $dataset_path"
 
 # First, generate the config file for the given ros2 bag
 echo 'Reading ros2 bag metadata, generating config file...'
-#python3 /home/tools/data-collection/src/data_collection/generate_config.py --bag /workspace/bags/$input_file --ignore-warnings --output /workspace/bags/$input_file_config.yaml
+python3 /home/tools/data-collection/src/data_collection/generate_config.py --bag /workspace/bags/$input_file --ignore-warnings --output /workspace/bags/$input_file_config.yaml
 
 # Second, using the config file convert the ros2 bag to dataset
 echo 'Extracting ros2 bag data...'
-#python3 /home/tools/data-collection/src/data_collection/bag_converter.py --bag /workspace/bags/$input_file --config_file /workspace/bags/$input_file_config.yaml --ignore-warnings --dataset_path $dataset_path --maximum_delay 0.050
+python3 /home/tools/data-collection/src/data_collection/bag_converter.py --bag /workspace/bags/$input_file --config_file /workspace/bags/$input_file_config.yaml --ignore-warnings --dataset_path $dataset_path --maximum_delay 0.050
 
 if [ -n "$tf_file" ]; then
     # generate pointclouds
